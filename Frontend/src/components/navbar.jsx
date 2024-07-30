@@ -11,9 +11,10 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
 
-const pages = ['Products', 'Pricing', 'Blog'];
+import { Link } from 'react-router-dom'
+
+const pages = ['Profile'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function Navbar() {
@@ -44,7 +45,7 @@ function Navbar() {
             variant="h6"
             noWrap
             component="a"
-            href="#app-bar-with-responsive-menu"
+            href="/"
             className='nanum-myeongjo-regular'
 
             sx={{
@@ -97,7 +98,7 @@ function Navbar() {
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+   
           <Typography
             variant="h5"
             noWrap
@@ -114,14 +115,16 @@ function Navbar() {
               textDecoration: 'none',
             }}
           >
-            LOGO
+          <p className='nanum-myeongjo-regular'>Adulting</p> 
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Button
-                key={page}
+                key={page} 
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
+                component={Link}
+                to={page === "Profile" ? '/profile' : '#'}
               >
                 {page}
               </Button>
