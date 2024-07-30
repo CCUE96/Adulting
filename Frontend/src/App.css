@@ -2,7 +2,7 @@
 
 
 html {
-  background-image: url('./assets/AdultingBackground.png');
+  background-image: url('./assets/cozyroom.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -11,3 +11,34 @@ html {
   height: 100vh;
   position: relative;
 }
+
+.nanum-gothic-regular {
+  font-family: "Nanum Gothic", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.nanum-gothic-extrabold {
+  font-family: "Nanum Gothic", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.nanum-myeongjo-regular {
+  font-family: "Nanum Myeongjo", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.dm-serif-display-regular {
+  font-family: "DM Serif Display", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.dm-serif-display-regular-italic {
+  font-family: "DM Serif Display", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
