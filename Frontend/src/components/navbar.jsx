@@ -44,7 +44,7 @@ function Navbar() {
             variant="h6"
             noWrap
             component="a"
-            href="#app-bar-with-responsive-menu"
+            href="/"
             className='nanum-myeongjo-regular'
 
             sx={{
