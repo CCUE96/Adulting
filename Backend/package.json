@@ -1,7 +1,7 @@
 {
   "name": "adulting-backend",
   "version": "1.0.0",
-  "description": "Backend for the Adulting application",
+  "description": "Backend",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
