@@ -1,6 +1,6 @@
 
 import { Outlet } from 'react-router-dom';
-// import Navbar from "./components/navbar";
+import Navbar from "./components/navbar";
 // import {
 //   ApolloClient,
 //   InMemoryCache,
@@ -32,8 +32,11 @@ import './App.css'
 function App() {
   return (
     // <ApolloProvider client={client}>
-      // <Navbar />
-      <Outlet />
+    <>
+       <Navbar />
+       <Outlet />
+    </>
+   
     // </ApolloProvider>
   );
 }
