@@ -1,5 +1,6 @@
 const { User, Comment, Reply } = require('../models');
 const { UserInputError } = require('apollo-server-express');
+const { signToken, checkPassword } = require('../utils/auth');
 
 const resolvers = {
   Query: {
@@ -54,7 +55,9 @@ const resolvers = {
         if (existingUser) {
           throw new UserInputError("Email already in use");
         }
-        return await User.create({ username, email, password });
+        const user = await User.create({ username, email, password });
+        const token = signToken(user);
+        return { token, user };
       } catch (error) {
         throw new Error("Failed to create user");
       }
@@ -76,11 +79,32 @@ const resolvers = {
         throw new Error("Failed to delete user");
       }
     },
+    login: async (parent, { email, password }) => {
+      try {
+        const user = await User.findOne({ where: { email } });
+        if (!user) {
+          throw new UserInputError("Incorrect email or password");
+        }
+        const valid = await checkPassword(password, user.password);
+        if (!valid) {
+          throw new UserInputError("Incorrect email or password");
+        }
+        const token = signToken(user);
+        return { token, user };
+      } catch (error) {
+        throw new Error("Failed to login");
+      }
+    },
     createComment: async (parent, { input }) => {
       try {
         const { userId, commentText } = input;
+        const user = await User.findByPk(userId);
+        if (!user) {
+          throw new UserInputError("User not found");
+        }
         return await Comment.create({ userId, commentText });
       } catch (error) {
+        console.error("Error creating comment:", error);
         throw new Error("Failed to create comment");
       }
     },

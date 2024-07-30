@@ -56,6 +56,11 @@ const typeDefs = gql`
     replyText: String!
   }
 
+  type Auth {
+    token: String!
+    user: User!
+  }
+
   type Query {
     users: [User]
     user(id: ID!): User
@@ -66,9 +71,10 @@ const typeDefs = gql`
   }
 
   type Mutation {
-    createUser(input: UserInput!): User
+    createUser(input: UserInput!): Auth
     updateUser(id: ID!, input: UserUpdateInput!): User
     deleteUser(id: ID!): User
+    login(email: String!, password: String!): Auth
 
     createComment(input: CommentInput!): Comment
     updateComment(id: ID!, commentText: String!): Comment
