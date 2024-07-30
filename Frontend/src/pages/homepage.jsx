@@ -1,11 +1,11 @@
-
+import TitleScreen from "../components/home/titlescreen"
 
 
 export default function HomePage() {
 
     return(
         <>
-        <p>does this work!</p>
+      <TitleScreen/>
         </>
     )
 }

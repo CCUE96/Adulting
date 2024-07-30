@@ -36,7 +36,7 @@ function Navbar() {
   };
 
   return (
-    <AppBar position="static" sx={{backgroundColor: '#34322f'}}>
+    <AppBar position="fixed" sx={{ backgroundColor: 'rgba(255, 255, 255, 0.1)', backdropFilter: 'blur(4px)' }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           
@@ -45,17 +45,20 @@ function Navbar() {
             noWrap
             component="a"
             href="#app-bar-with-responsive-menu"
+            className='nanum-myeongjo-regular'
+
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
-              fontFamily: 'monospace',
+              
               fontWeight: 700,
               letterSpacing: '.1rem',
               color: 'inherit',
               textDecoration: 'none',
             }}
           >
-            Adulting
+            
+           <p className='nanum-myeongjo-regular'>Adulting</p> 
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
