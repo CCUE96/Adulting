@@ -6,7 +6,7 @@ export default function TitleScreen() {
             display: 'flex',
             justifyContent: 'center',
             flexDirection: 'column',
-            height: '100vh', // Full viewport height
+            height: '90vh', // Full viewport height
         }}>
             <Typography sx={{
                 fontSize: 88,
