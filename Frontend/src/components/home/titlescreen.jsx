@@ -30,8 +30,17 @@ export default function TitleScreen() {
                 color: 'white',
                 textAlign: 'center',
             }}>
-                <h1 className="nanum-myeongjo-regular">Scroll down for more</h1>
+               
             </Typography>
+            <Typography sx={{
+                fontSize: 18,
+                color: 'white',
+                textAlign: 'center',
+                animation: 'fadeInOut 2s infinite'
+            }}>
+               
+            <h1 className="nanum-myeongjo-regular">Scroll down for more</h1></Typography>
+
         </Box>
     );
 }

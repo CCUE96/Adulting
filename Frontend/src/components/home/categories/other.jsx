@@ -24,7 +24,7 @@ export default function OtherBox({goBack}) {
         <Box sx={{ display: 'flex', justifyContent: 'space-around', padding: 2, backgroundColor: 'rgba(255, 255, 255, 0.0)', backdropFilter: 'blur(10px)', color: 'white', width: '50vw', height: '30vh'}}>
             <Box>
                 <Button onClick={goBack}>Back</Button>
-                <h1 style={{textAlign:'center', textDecoration: 'underline', textUnderlineOffset: '0.8rem'}}className='dm-serif-display-regular'>Other</h1>
+                <h1 style={{textAlign:'center', textDecoration: 'underline', textUnderlineOffset: '0.8rem', marginTop: '0px'}}className='dm-serif-display-regular'>OTHER</h1>
                 <List  sx={{ maxHeight: '200px', overflow: 'auto', maxWidth:'700px'}}>
                     {questions.map((question, index) => (
                         <Button sx={{color:'white', textTransform: 'none'}}key={index} style={{ display: 'block', fontSize: 24}}>
