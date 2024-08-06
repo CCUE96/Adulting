@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Grid, Avatar, List, ListItem, ListItemText, Box, Typography, Divider, Fab, Dialog, DialogTitle, TextField, Button } from '@mui/material';
+import { Grid, Avatar, List, ListItem, ListItemText, Box, Typography, Divider, Fab, Dialog, DialogTitle, TextField } from '@mui/material';
 import ProfileNav from './profileNav';
 import ChatIcon from '@mui/icons-material/Chat';
 import profilePic from '../../assets/defaultProfile.jpeg';
@@ -8,10 +8,14 @@ import SendIcon from '@mui/icons-material/Send';
 import InputAdornment from '@mui/material/InputAdornment';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
+import Finances from './finance/finance';
+import Health from './health/health';
+import Recipes from './recipes/recipe'
 
 const Profile = () => {
   const friends = [ {name: 'Yuki', avatar: profilePic}, {name: 'Kiba', avatar: profilePic}, {name: 'Michael', avatar: profilePic}, {name: 'Kayla', avatar: profilePic}];
   const [open, setOpen] = useState(false);
+  const [selectedItem, setSelectedItem] = useState('finances');
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -19,6 +23,10 @@ const Profile = () => {
 
   const handleClose = () => {
     setOpen(false);
+  };
+
+  const handleNavClick = (item) => {
+    setSelectedItem(item);
   };
 
   return (
@@ -49,8 +57,12 @@ const Profile = () => {
         </Grid>
         <Grid item xs={9}>
           <Box sx={{ padding: 0, borderRadius: 1, backgroundColor: 'rgba(255, 255, 255, 0.1)', backdropFilter: 'blur(4px)', height: '80vh' }}>
-            <Typography variant="h6"></Typography>
-            <ProfileNav />
+            <ProfileNav onNavClick={handleNavClick} />
+            <Box>
+            {selectedItem === 'finances' && <Finances />}
+            {selectedItem === 'health' && <Health />}
+            {selectedItem === 'recipes' && <Recipes />}
+            </Box>
             <Fab color="primary" aria-label="chat" onClick={handleClickOpen} sx={{ position: 'fixed', bottom: 16, right: 16, backgroundColor: '#34322f',
         '&:hover': {
             backgroundColor: '#4a4845'
