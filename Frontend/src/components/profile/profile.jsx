@@ -4,6 +4,10 @@ import ProfileNav from './profileNav';
 import ChatIcon from '@mui/icons-material/Chat';
 import profilePic from '../../assets/defaultProfile.jpeg';
 import AddIcon from '@mui/icons-material/Add';
+import SendIcon from '@mui/icons-material/Send';
+import InputAdornment from '@mui/material/InputAdornment';
+import IconButton from '@mui/material/IconButton';
+import CloseIcon from '@mui/icons-material/Close';
 
 const Profile = () => {
   const friends = [ {name: 'Yuki', avatar: profilePic}, {name: 'Kiba', avatar: profilePic}, {name: 'Michael', avatar: profilePic}, {name: 'Kayla', avatar: profilePic}];
@@ -28,14 +32,14 @@ const Profile = () => {
               sx={{ width: 100, height: 100, marginBottom: 2 }}
             />
             <Typography sx={{ color: 'white'}}><strong>Name</strong></Typography>
-            <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '3rem', border: '1px solid grey', borderRadius: 1, width: '100%', height: '100%', backgroundColor: '#34322f',  boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}>
-            <Typography variant="h6" sx={{ padding: 1, color: 'white' }}>My Friends</Typography>
+            <Box sx={{ display: 'flex', flexDirection: 'column', marginTop: '3rem', border: '1px solid grey', borderRadius: 1, width: '100%', height: '100%', backgroundColor: '#34322f',  boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}>
+            <Typography variant="h6" sx={{ padding: 1, color: 'white',  textAlign: 'center' }}>My Friends</Typography>
             <Divider sx={{ width: '100%', marginTop: 1, marginBottom: 1 }} />
             <List>
               {friends.map((friend, index) => (
                 <ListItem key={index}>
-                  <Avatar sx={{ marginRight: 3}}>{friend.avatar}</Avatar>
-                  <ListItemText primary={friend.name} sx={{ color: 'white'}}/>
+                  <Avatar sx={{ marginRight: 3, alignItems: 'left'}}>{friend.avatar}</Avatar>
+                  <ListItemText primary={friend.name} sx={{ color: 'white', marginLeft: '3rem'}}/>
                 </ListItem>
               ))}
               {/* add button to view more */}
@@ -63,23 +67,46 @@ const Profile = () => {
                 height: '50vh',
                 overflow: 'auto',
                 margin: '1em',
+                width: '30vw',
               },
             }}
             BackdropProps={{ invisible: true }}>
-                      <Box display="flex" justifyContent="flex-end">
-        <DialogTitle sx={{ backgroundColor: '#34322f', color: 'white', maxWidth: '100%' }}>Messages    <Button variant="contained" startIcon={<AddIcon />} onClick={handleClose} color="primary" size="small" sx={{ height: '2rem', width: '0.5'}}/></DialogTitle>
+     <Box display="flex" justifyContent="center" alignItems="center" width="100%">
+     <DialogTitle sx={{ backgroundColor: '#34322f', color: 'white', width: '100%', textAlign: 'center', position: 'relative' }}>
+    <Typography variant="h6">Messages</Typography>
+    <IconButton onClick={handleClose} color="primary" sx={{ position: 'absolute', right: '1rem', top: '50%', transform: 'translateY(-50%)', marginRight: '1rem', color: 'white', backgroundColor: 'none' }}>
+      <CloseIcon />
+    </IconButton>
+  </DialogTitle>
+    </Box>
+        <Box>
+          <Typography sx={{ textAlign: 'center', marginTop: '10rem', color: 'lightgray'}}>No Current Messages...</Typography>
         </Box>
+        <Box display="flex" flexDirection="column" justifyContent="flex-end" height="100%">
+        <Box display="flex" justifyContent="space-between" alignItems="center" width="100%">
         <TextField
-          autoFocus
-          margin="dense"
-          id="message"
-          label="Message"
-          type="text"
-          fullWidth
-        />
-        <Button onClick={handleClose} color="primary">
-          Send
-        </Button>
+    autoFocus
+    margin="dense"
+    id="message"
+    label="Message"
+    type="text"
+    fullWidth
+    InputProps={{
+      endAdornment: (
+        <InputAdornment position="end">
+          <IconButton onClick={handleClose} color="primary">
+            <SendIcon />
+          </IconButton>
+        </InputAdornment>
+      ),
+    }}
+    sx={{ width: '80%', marginLeft: '1rem'}} // possibly make invisible until clicking in a dm with a friend
+  />
+   <IconButton onClick={handleClose} color="primary" sx={{ marginRight: '1rem' }}>
+      <AddIcon />
+    </IconButton>
+  </Box>
+  </Box>
       </Dialog>
           </Box>
         </Grid>
