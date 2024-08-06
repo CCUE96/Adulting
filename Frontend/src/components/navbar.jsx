@@ -14,7 +14,7 @@ import MenuItem from '@mui/material/MenuItem';
 
 import { Link } from 'react-router-dom'
 
-const pages = ['Profile'];
+const pages = ['Profile', 'Articles'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function Navbar() {
@@ -93,7 +93,7 @@ function Navbar() {
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                  <Typography textAlign="center" className='nanum-myeongjo-regular'>{page}</Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -119,10 +119,11 @@ function Navbar() {
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
+            
               <Button
                 key={page} 
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
+                sx={{ my: 2, color: 'white', display: 'block', fontFamily: 'nanum-myeongjo-regular' }}
                 component={Link}
                 to={page === "Profile" ? '/profile' : '#'}
               >

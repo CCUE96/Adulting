@@ -12,6 +12,7 @@ import OtherBox from "./categories/other";
 import SelfBox from "./categories/self";
 import NutritionBox from "./categories/nutrition";
 
+
 export default function MainCategory() {
     const [showAll, setShowAll] = useState(true);
     const [showFinance, setShowFinance] = useState(false);
@@ -24,40 +25,59 @@ export default function MainCategory() {
     const [showOther, setShowOther]  = useState(false)
 
     const handleFinanceClick = () => {
-        setShowAll(false);
-        setShowFinance(true);
+        setTimeout(() => {
+            setShowAll(false);
+            setShowFinance(true);
+        }, 1000);
     };
-
+    
     const handleHealthClick = () => {
-        setShowAll(false)
-        setShowHealth(true)
-    }
+        setTimeout(() => {
+            setShowAll(false);
+            setShowHealth(true);
+        }, 1000);
+    };
+    
     const handleTechClick = () => {
-        setShowAll(false)
-        setShowTech(true)
-    }
-
+        setTimeout(() => {
+            setShowAll(false);
+            setShowTech(true);
+        }, 1000);
+    };
+    
     const handleEducationClick = () => {
-        setShowEducation(true)
-        setShowAll(false)
-    }
+        setTimeout(() => {
+            setShowAll(false);
+            setShowEducation(true);
+        }, 1000);
+    };
+    
     const handleHomeClick = () => {
-        setShowAll(false)
-        setShowHome(true)
-    }
-
+        setTimeout(() => {
+            setShowAll(false);
+            setShowHome(true);
+        }, 1000);
+    };
     const handleSelfClick = () => {
-        setShowAll(false)
-        setShowSelf(true)
-    }
+        setTimeout(() => {
+            setShowAll(false);
+            setShowSelf(true);
+        }, 1000);
+    };
+    
     const handleNutritionClick = () => {
-        setShowAll(false)
-        setShowNutrition(true)
-    }
+        setTimeout(() => {
+            setShowAll(false);
+            setShowNutrition(true);
+        }, 1000);
+    };
+    
     const handleOtherClick = () => {
-        setShowAll(false)
-        setShowOther(true)
-    }
+        setTimeout(() => {
+            setShowAll(false);
+            setShowOther(true);
+        }, 1000);
+    };
 
 
     const handleGoBack = () => {
@@ -81,6 +101,7 @@ export default function MainCategory() {
             height: '100vh', // Full viewport height
         }}>
             <SearchBar />
+          
             {showAll && <AllCategories onFinanceClick={handleFinanceClick} onHealthClick ={handleHealthClick} onTechClick={handleTechClick} onEducationClick = {handleEducationClick} onHomeClick={handleHomeClick} onNutritionClick={handleNutritionClick} onSelfClick={handleSelfClick} onOtherClick={handleOtherClick}/>}
             {showFinance && <FinanceBox goBack = {handleGoBack} />}
             {showHealth && <HealthBox goBack = {handleGoBack} />}

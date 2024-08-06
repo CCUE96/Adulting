@@ -12,7 +12,7 @@ export default function TitleScreen() {
                 fontSize: 88,
                 color: 'white',
                 textAlign: 'center',
-                marginBottom: '200px',
+                marginBottom: '0px',
                
             }}>
                 <h1 className="dm-serif-display-regular">ADULTING</h1>
@@ -22,6 +22,7 @@ export default function TitleScreen() {
                 fontSize: 36,
                 color: 'white',
                 textAlign: 'center',
+                marginBottom:'150px'
             }}>
                 <h1 className="nanum-myeongjo-regular">Being an adult can be difficult.</h1>
             </Typography>
@@ -36,10 +37,11 @@ export default function TitleScreen() {
                 fontSize: 18,
                 color: 'white',
                 textAlign: 'center',
-                animation: 'fadeInOut 2s infinite'
+                animation: 'fadeInOut 2s infinite',
+                paddingBottom: '50px'
             }}>
                
-            <h1 className="nanum-myeongjo-regular">Scroll down for more</h1></Typography>
+            <h1 className="nanum-myeongjo-regular">Press Enter to continue...</h1></Typography>
 
         </Box>
     );

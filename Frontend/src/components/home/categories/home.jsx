@@ -21,15 +21,17 @@ const questions = [
 export default function HomeBox({goBack}) {
     console.log('all categories rendered');
     return (
-        <Box sx={{ display: 'flex', justifyContent: 'space-around', padding: 2, backgroundColor: 'rgba(255, 255, 255, 0.0)', backdropFilter: 'blur(10px)', color: 'white', width: '50vw', height: '30vh'}}>
+        <Box sx={{ display: 'flex', justifyContent: 'space-around', padding: 2, backgroundColor: 'rgba(255, 255, 255, 0.0)', backdropFilter: 'blur(10px)', color: 'white',width: '1136px', height: '322px'}}>
             <Box>
                 <Button onClick={goBack}>Back</Button>
-                <h1 style={{textAlign:'center', textDecoration: 'underline', textUnderlineOffset: '0.8rem', marginTop: '0px'}}className='dm-serif-display-regular'>HOME</h1>
-                <List  sx={{ maxHeight: '200px', overflow: 'auto' , maxWidth:'700px'}}>
+                <p style={{textAlign:'center', marginTop: '0px', fontSize: 48, letterSpacing: '0.4px'}}className='dm-serif-display-regular'>HOME</p>                <List  sx={{ maxHeight: '200px', overflow: 'auto' , maxWidth:'700px'}}>
                     {questions.map((question, index) => (
-                        <Button sx={{color:'white', textTransform: 'none'}}key={index} style={{ display: 'block', fontSize: 24}}>
+                        <>
+                        <Button sx={{color:'white', textTransform: 'none'}} key={index} style={{ display: 'block', fontSize: 24}}>
                             {question}
                         </Button>
+                        <hr/>
+                        </>
                     ))}
                 </List>
             </Box>
