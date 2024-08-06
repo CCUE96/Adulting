@@ -21,15 +21,18 @@ const questions = [
 export default function TechBox({goBack}) {
     console.log('all categories rendered');
     return (
-        <Box sx={{ display: 'flex', justifyContent: 'space-around', padding: 2, backgroundColor: 'rgba(255, 255, 255, 0.0)', backdropFilter: 'blur(10px)', color: 'white', width: '50vw', height: '30vh'}}>
+        <Box sx={{ display: 'flex', justifyContent: 'space-around', padding: 2, backgroundColor: 'rgba(255, 255, 255, 0.0)', backdropFilter: 'blur(10px)', color: 'white',width: '1136px', height: '322px'}}>
             <Box>
                 <Button onClick={goBack}>Back</Button>
-                    <h1 style={{textAlign:'center', textDecoration: 'underline', textUnderlineOffset: '0.8rem', marginTop: '0px'}}className='dm-serif-display-regular'>TECHNOLOGY</h1>
+                    <p style={{textAlign:'center', marginTop: '0px', fontSize: 45, letterSpacing: '0.3px'}}className='dm-serif-display-regular'>TECHNOLOGY</p>
                 <List sx={{ maxHeight: '200px', overflow: 'auto', maxWidth:'700px' }}>
                     {questions.map((question, index) => (
-                        <Button sx={{color:'white', textTransform: 'none'}} key={index} style={{ display: 'block', fontSize: 24}}>
-                            {question}
-                        </Button>
+                         <>
+                         <Button sx={{color:'white', textTransform: 'none'}} key={index} style={{ display: 'block', fontSize: 24}}>
+                             {question}
+                         </Button>
+                         <hr/>
+                         </>
                     ))}
                 </List>
             </Box>

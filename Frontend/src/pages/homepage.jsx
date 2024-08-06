@@ -9,15 +9,13 @@ export default function HomePage() {
     
 
     useEffect(() => {
-        const handleKeyDown = () => {
-            setShowMain(true);
-        };
-
-        const handleMouseWheel = () => {
-            setShowMain(true);
+        const handleKeyDown = (e) => {
+            if (e.key === "Enter") {
+                setShowMain(true);
+            }
             
         };
-       
+
      
         const handleTouchStart = (e) => {
           touchStartY.current = e.touches[0].clientY;
@@ -31,13 +29,13 @@ export default function HomePage() {
       };
         
         window.addEventListener('keydown', handleKeyDown);
-        window.addEventListener('mousewheel', handleMouseWheel);
+    
         window.addEventListener('touchstart', handleTouchStart);
         window.addEventListener('touchend', handleTouchEnd);
 
         return () => {
             window.removeEventListener('keydown', handleKeyDown);
-            window.removeEventListener('mousewheel', handleMouseWheel);
+         
             window.removeEventListener('touchstart', handleTouchStart);
             window.removeEventListener('touchend', handleTouchEnd);
         
