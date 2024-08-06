@@ -25,7 +25,7 @@ export default function EducationBox({goBack}) {
             <Box>
                 <Button onClick={goBack}>Back</Button>
                 
-                <h1 style={{textAlign:'center', textDecoration: 'underline', textUnderlineOffset: '0.8rem'}}className='dm-serif-display-regular'>Education</h1>
+                <h1 style={{textAlign:'center', textDecoration: 'underline', textUnderlineOffset: '0.8rem', marginTop: '0px'}}className='dm-serif-display-regular'>EDUCATION</h1>
                 
                 <List  sx={{ maxHeight: '200px', overflow: 'auto', maxWidth:'700px' }}>
                     {questions.map((question, index) => (

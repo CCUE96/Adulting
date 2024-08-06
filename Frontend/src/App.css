@@ -42,3 +42,8 @@ html {
   font-style: italic;
 }
 
+@keyframes fadeInOut {
+  0% {opacity: .9;}
+  50% {opacity: 0.4;}
+  100% {opacity: .9;}
+}
