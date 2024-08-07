@@ -15,7 +15,7 @@ const categories2 = ['Home', 'Self-Care', 'Nutrition', 'Other'];
 
 
 export default function AllCategories({ onFinanceClick, onHealthClick, onTechClick, onEducationClick, onHomeClick, onSelfClick, onNutritionClick, onOtherClick }) {
-    console.log('all categories rendered');
+ 
     const [selectedCategory, setSelectedCategory] = useState(null);
 
 

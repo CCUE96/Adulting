@@ -11,6 +11,7 @@ import HomeBox from "./categories/home";
 import OtherBox from "./categories/other";
 import SelfBox from "./categories/self";
 import NutritionBox from "./categories/nutrition";
+import SearchResults from "./searchResults";
 
 
 
@@ -24,6 +25,8 @@ export default function MainCategory() {
     const [showSelf, setShowSelf]  = useState(false)
     const [showNutrition, setShowNutrition]  = useState(false)
     const [showOther, setShowOther]  = useState(false)
+    const [showSearch, setShowSearch] = useState(false)
+    const [searchTerm, setSearchTerm] = useState('')
 
  
 
@@ -82,6 +85,19 @@ export default function MainCategory() {
         }, 1000);
     };
 
+    const handleSearchClick = () => {
+        setShowAll(false)
+        setShowFinance(false)
+        setShowHealth(false)
+        setShowTech(false)
+        setShowEducation(false)
+        setShowHome(false)
+        setShowOther(false)
+        setShowNutrition(false)
+        setShowSelf(false)
+        setShowSearch(true)
+    }
+
 
     const handleGoBack = () => {
         setShowAll(true)
@@ -93,6 +109,7 @@ export default function MainCategory() {
         setShowOther(false)
         setShowNutrition(false)
         setShowSelf(false)
+        setShowSearch(false)
     }
 
     return (
@@ -103,7 +120,7 @@ export default function MainCategory() {
             alignItems: 'center',
             height: '100vh', // Full viewport height
         }}>
-            <SearchBar />
+            <SearchBar setSearchTerm={setSearchTerm} onSearch={handleSearchClick} />
           
             {showAll && <AllCategories onFinanceClick={handleFinanceClick} onHealthClick ={handleHealthClick} onTechClick={handleTechClick} onEducationClick = {handleEducationClick} onHomeClick={handleHomeClick} onNutritionClick={handleNutritionClick} onSelfClick={handleSelfClick} onOtherClick={handleOtherClick}/>}
             {showFinance && <FinanceBox goBack = {handleGoBack} />}
@@ -114,6 +131,7 @@ export default function MainCategory() {
             {showSelf && <SelfBox goBack={handleGoBack} />}
             {showNutrition && <NutritionBox goBack={handleGoBack} />}
             {showOther && <OtherBox goBack={handleGoBack} />}
+            {showSearch && <SearchResults searchTerm={searchTerm} goBack={handleGoBack}/>}
         </Box>
     );
 }
