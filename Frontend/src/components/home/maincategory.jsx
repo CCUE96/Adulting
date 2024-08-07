@@ -13,6 +13,7 @@ import SelfBox from "./categories/self";
 import NutritionBox from "./categories/nutrition";
 
 
+
 export default function MainCategory() {
     const [showAll, setShowAll] = useState(true);
     const [showFinance, setShowFinance] = useState(false);
@@ -23,6 +24,8 @@ export default function MainCategory() {
     const [showSelf, setShowSelf]  = useState(false)
     const [showNutrition, setShowNutrition]  = useState(false)
     const [showOther, setShowOther]  = useState(false)
+
+ 
 
     const handleFinanceClick = () => {
         setTimeout(() => {
