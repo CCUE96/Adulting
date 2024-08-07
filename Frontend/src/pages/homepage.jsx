@@ -1,11 +1,14 @@
 import { useEffect, useRef, useState } from 'react';
 import TitleScreen from "../components/home/titlescreen";
 import MainCategory from "../components/home/maincategory";
+import { useLocation } from 'react-router-dom';
+
 
 export default function HomePage() {
     const mainCategoryRef = useRef(null);
     const [showMain, setShowMain] = useState(false);
     const touchStartY = useRef(0)
+
     
 
     useEffect(() => {
@@ -52,7 +55,7 @@ export default function HomePage() {
         <>
             <TitleScreen />
             <div ref={mainCategoryRef} style={{ display: showMain ? 'block' : 'none' }}>
-                <MainCategory />
+                <MainCategory/>
             </div>
         </>
     );
