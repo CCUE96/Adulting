@@ -4,6 +4,7 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import {Button} from '@mui/material'
+
     
 const questions = [
     'How can I protect my personal information online?',
@@ -19,7 +20,10 @@ const questions = [
 ];
 
 export default function TechBox({goBack}) {
-    console.log('all categories rendered');
+
+
+    
+    
     return (
         <Box sx={{ display: 'flex', justifyContent: 'space-around', padding: 2, backgroundColor: 'rgba(255, 255, 255, 0.0)', backdropFilter: 'blur(10px)', color: 'white',width: '1136px', height: '322px'}}>
             <Box>
