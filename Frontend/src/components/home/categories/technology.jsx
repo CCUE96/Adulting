@@ -5,8 +5,12 @@ import List from '@mui/material/List';
 import { Link } from 'react-router-dom';
 
 const questions = [
-    { text: 'How can I protect my personal information online?', path: 'technology/personalinfo' },
+    { text: 'What should I know about online privacy and data tracking?', path: 'technology/privacy' },
     { text: 'What are the best practices for creating strong passwords?', path: 'technology/passwords' },
+    { text: 'How can I avoid and recognize online scams?', path: 'technology/scams' },
+    { text: 'When should I upgrade my phone or other device?', path: 'technology/upgrade' },
+    { text: 'How can I troubleshoot common computer problems?', path: 'technology/troubleshoot' },
+
     // ... rest of your questions
 ];
 
