@@ -5,8 +5,8 @@ import List from '@mui/material/List';
 import { Link } from 'react-router-dom';
 
 const questions = [
-    { text: 'How can I protect my personal information online?', path: 'personalinfo' },
-    { text: 'What are the best practices for creating strong passwords?', path: 'passwords' },
+    { text: 'How can I protect my personal information online?', path: 'technology/personalinfo' },
+    { text: 'What are the best practices for creating strong passwords?', path: 'technology/passwords' },
     // ... rest of your questions
 ];
 
