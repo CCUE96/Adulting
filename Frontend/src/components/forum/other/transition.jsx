@@ -17,7 +17,7 @@ export default function Transition() {
         <>
             <Box sx={{ display: 'grid', placeItems: 'center', height: '100vh' }}>
                 <Box sx={{ display: 'flex', justifyContent: 'center', width: '80vw', height: '80vh', padding: 2 }}>
-                    <h1 style={{ color: 'white', marginRight: '100px', fontSize: '50px' }}>How do i navigate the transition from high school to college or work life?
+                    <h1 style={{ color: 'white', marginRight: '100px', fontSize: '50px' }}>How do I navigate the transition from high school to college or work life?
 </h1>
                     <Paper elevation={3} sx={{ overflowY: 'auto', backgroundColor: 'rgba(255, 255, 255, 0.8)' }}>
                     <Button onClick={handleGoBack}>Go Back</Button>

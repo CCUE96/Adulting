@@ -15,7 +15,7 @@ export default function SearchResults({ searchTerm, goBack }) {
         { text: 'How do I stay motivated and positive furing tough times?', path: 'selfcare/motivation' },
         { text: 'What are some ways to build self-confidence and self-esteem?', path: 'selfcare/confidence' },
         { text: 'How can I find and join social groups or clubs that interest me?', path: 'selfcare/social' },
-        { text: 'How do i navigate the transition from high school to college or work life?', path: 'other/transition' },
+        { text: 'How do I navigate the transition from high school to college or work life?', path: 'other/transition' },
         { text: 'What are some effective strategies for networking and job hunting?', path: 'other/networking' },
         { text: 'How do I handle conflict resolution in personal and professional relationships?', path: 'other/conflict' },
         { text: 'What are the basics of renting a car or using public transportation?', path: 'other/transportation' },
