@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Grid, Avatar, List, ListItem, ListItemText, Box, Typography, Divider, Fab, Dialog, DialogTitle, TextField } from '@mui/material';
+import { Grid, Avatar, List, ListItem, ListItemText, Box, Typography, Divider, Fab, Dialog, DialogTitle, TextField, useMediaQuery, useTheme } from '@mui/material';
 import ProfileNav from './profileNav';
 import ChatIcon from '@mui/icons-material/Chat';
 import AddIcon from '@mui/icons-material/Add';
@@ -17,6 +17,8 @@ const Profile = () => {
   const [selectedItem, setSelectedItem] = useState('finances'); // profile nav
   const [showFriendsList, setShowFriendsList] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.down("sm"));
 
   // handler for opening and closing the dialog box
   const handleClickOpen = () => {
@@ -50,18 +52,18 @@ const Profile = () => {
   return (
     <div>
       <Grid container spacing={2} sx={{ padding: 2, marginTop: '4.3rem' }}>
-        <Grid item xs={3}>
-          <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', backgroundColor: 'rgba(255, 255, 255, 0.1)', backdropFilter: 'blur(4px)', borderRadius: 1, padding : 2, height: '76.4vh' }}>
+        <Grid item xs={12} sm={6} md={3}>
+          <Box sx={{ justifyContent: matches ? "center" : "flex-start", display: 'flex', flexDirection: 'column', alignItems: 'center', backgroundColor: 'rgba(255, 255, 255, 0.1)', backdropFilter: 'blur(4px)', borderRadius: 1, padding : 2, height: '76.4vh' }}>
             <Avatar
               alt="Profile Picture"
               src="" 
               sx={{ width: 100, height: 100, marginBottom: 2 }}
             />
             <Typography sx={{ color: 'white'}}><strong>Name</strong></Typography>
-            <Box sx={{ display: 'flex', flexDirection: 'column', marginTop: '3rem', border: '1px solid grey', borderRadius: 1, width: '100%', height: '100%', backgroundColor: '#34322f',  boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}>
+            <Box sx={{ display: 'flex', flexDirection: 'column', marginTop: '3rem', border: '1px solid grey', borderRadius: 1, width: '100%', height: '100%', backgroundColor: '#34322f',  boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', overflow: 'auto' }}>
             <Typography variant="h6" sx={{ padding: 1, color: 'white',  textAlign: 'center' }}>My Friends</Typography>
             <Divider sx={{ width: '100%', marginTop: 1, marginBottom: 1 }} />
-            <List>
+            <List sx={{ flexGrow: 1 }}>
               {friends.map((friend, index) => (
                 <ListItem key={index}>
                   <Avatar sx={{ marginRight: 3, alignItems: 'left'}}>{friend.avatar}</Avatar>
@@ -73,7 +75,7 @@ const Profile = () => {
             </Box>
           </Box>
         </Grid>
-        <Grid item xs={9}>
+        <Grid item xs={12} sm={9}>
           <Box sx={{ padding: 0, borderRadius: 1, backgroundColor: 'rgba(255, 255, 255, 0.1)', backdropFilter: 'blur(4px)', height: '80vh' }}>
             <ProfileNav onNavClick={handleNavClick} />
             <Box>
@@ -81,13 +83,6 @@ const Profile = () => {
             {selectedItem === 'health' && <Health />}
             {selectedItem === 'recipes' && <Recipes />}
             </Box>
-            <Fab color="primary" aria-label="chat" onClick={handleClickOpen} sx={{ position: 'fixed', bottom: 16, right: 16, backgroundColor: '#34322f',
-        '&:hover': {
-            backgroundColor: '#4a4845'
-        }
-       }}>
-      <ChatIcon />
-    </Fab>
     <Dialog open={open} onClose={handleClose}
             PaperProps={{
               style: {
@@ -96,8 +91,8 @@ const Profile = () => {
                 right: 0,
                 height: '55vh',
                 overflow: 'hidden',
-                margin: '1em',
-                width: '30vw',
+                margin: '1rem',
+                width: matches ? '90vw' : '30vw',
                 overflowX: 'hidden'
               },
             }}
@@ -112,7 +107,7 @@ const Profile = () => {
     </Box>
         <Box sx={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
         {!showFriendsList && (
-          <Typography sx={{ textAlign: 'center', marginTop: '10rem', color: 'lightgray' }}>No Current Messages...</Typography>
+          <Typography sx={{ textAlign: 'center', marginTop: matches ? '7rem' : '10rem', color: 'lightgray' }}>No Current Messages...</Typography>
         )}
         {showFriendsList && (
           <Box sx={{ padding: '1rem', backgroundColor: 'white', borderRadius: '4px', maxHeight: '35vh', overflow: 'hidden', flex: 1 }}>
@@ -124,7 +119,7 @@ const Profile = () => {
               onChange={handleSearchChange}
               sx={{ marginBottom: '1rem' }}
             />
-            <Box sx={{ maxHeight: '30vh', overflow: 'auto' }}>
+            <Box sx={{ maxHeight: matches ? '15vh' : '30vh', overflow: 'auto' }}>
             <List>
               {filteredFriends.map((friend, index) => (
                 <ListItem key={index}>
@@ -166,6 +161,14 @@ const Profile = () => {
           </Box>
         </Grid>
       </Grid>
+      <Fab color="primary" aria-label="chat" onClick={handleClickOpen} sx={{ position: 'fixed', bottom: 10, right: 10, 
+            backgroundColor: '#34322f',
+        '&:hover': {
+            backgroundColor: '#4a4845'
+        }
+       }}>
+      <ChatIcon/>
+    </Fab>
     </div>
   );
 };
