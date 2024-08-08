@@ -7,7 +7,7 @@ import {Button} from '@mui/material'
 import {Link} from 'react-router-dom'
     
 const questions = [
-    { text: 'How do i navigate the transition from high school to college or work life?', path: 'other/transition' },
+    { text: 'How do I navigate the transition from high school to college or work life?', path: 'other/transition' },
     { text: 'What are some effective strategies for networking and job hunting?', path: 'other/networking' },
     { text: 'How do I handle conflict resolution in personal and professional relationships?', path: 'other/conflict' },
     { text: 'What are the basics of renting a car or using public transportation?', path: 'other/transportation' },
