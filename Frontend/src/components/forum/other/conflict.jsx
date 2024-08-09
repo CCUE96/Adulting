@@ -106,6 +106,7 @@ export default function Conflict() {
                         </Typography>
 
                     </Paper>
+                   
                 </Box>
             </Box>
         </>
