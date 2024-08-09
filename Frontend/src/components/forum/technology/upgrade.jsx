@@ -5,7 +5,7 @@ import Paper from '@mui/material/Paper';
 import {Button, Typography} from '@mui/material'
 
 
-export default function PersonalInfo( ) {
+export default function Upgrade( ) {
     const navigate = useNavigate();
 
     const handleGoBack = () => {
@@ -17,7 +17,7 @@ export default function PersonalInfo( ) {
         <>
             <Box sx={{ display: 'grid', placeItems: 'center', height: '100vh' }}>
                 <Box sx={{ display: 'flex', justifyContent: 'center', width: '80vw', height: '80vh', padding: 2 }}>
-                    <h1 style={{ color: 'white', marginRight: '100px', fontSize: '50px' }}>How can I protect my personal information online?</h1>
+                    <h1 style={{ color: 'white', marginRight: '100px', fontSize: '50px' }}>When should I upgrade my phone or other device?</h1>
                     <Paper elevation={3} sx={{ overflowY: 'auto', backgroundColor: 'rgba(255, 255, 255, 0.8)' }}>
                     <Button onClick={handleGoBack}>Go Back</Button>
 

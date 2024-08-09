@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 
-import PersonalInfo from '../components/forum/technology/personalinfo';
+import Privacy from '../components/forum/technology/privacy';
 import Password from '../components/forum/technology/passwords';
 import Worklife from '../components/forum/selfcare/worklife';
 import Burnout from '../components/forum/selfcare/burnout';
@@ -18,27 +18,38 @@ import Snacks from '../components/forum/nutrition/snacks';
 import Diet from '../components/forum/nutrition/diet';
 import Kitchen from '../components/forum/nutrition/kitchen';
 import Habits from '../components/forum/nutrition/habits';
+import Scams from '../components/forum/technology/scams';
+import Upgrade from '../components/forum/technology/upgrade';
+import Troubleshoot from '../components/forum/technology/troubleshoot';
 
 
 export default function ForumPage() {
     return (
         <Routes>
-            <Route path="technology/personalinfo" element={<PersonalInfo/>} />
+            <Route path="technology/privacy" element={<Privacy/>} />
             <Route path="technology/passwords" element={<Password/>} />
+            <Route path='technology/scams' element={<Scams/>}/>
+            <Route path='technology/upgrade' element={<Upgrade/>}/>
+            <Route path='technology/troubleshoot' element={<Troubleshoot/>}/>
+
             <Route path="selfcare/worklife" element ={<Worklife/>}/>
             <Route path='selfcare/burnout' element={<Burnout/>}/>
             <Route path='selfcare/motivation' element={<Motivation/>}/>
             <Route path='selfcare/confidence' element={<Confidence/>}/>
             <Route path='selfcare/social' element={<Social/>}/>
+
             <Route path='other/conflict' element={<Conflict/>}/>
             <Route path='other/networking' element={<Networking/>}/>
             <Route path='other/events' element={<Events/>}/>
             <Route path='other/transition' element={<Transition/>}/>
+            <Route path='other/transportation' element={<Transportation/>}/>
+
             <Route path='nutrition/mealprep' element={<Mealprep/>}/>
             <Route path='nutrition/snacks' element={<Snacks/>}/>
             <Route path='nutrition/habits' element={<Habits/>}/>
             <Route path='nutrition/diet' element={<Diet/>}/>
             <Route path='nutrition/kitchen' element={<Kitchen/>}/>
+        
             {/* Add more routes as needed */}
         </Routes>
     );
