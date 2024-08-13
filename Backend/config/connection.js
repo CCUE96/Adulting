@@ -1,9 +1,22 @@
-const { Sequelize } = require('sequelize');
+require('dotenv').config();
+const mongoose = require('mongoose');
 
-const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASSWORD, {
-  host: process.env.DB_HOST,
-  dialect: 'mysql',
-  port: process.env.DB_PORT,
+const dbUri = process.env.DB_URI || 'mongodb://127.0.0.1:27017/Adulting';
+
+mongoose.connect(dbUri)
+  .then(() => {
+    console.log('Connected successfully to MongoDB');
+  })
+  .catch((error) => {
+    console.error('Error connecting to MongoDB:', error);
+  });
+
+const db = mongoose.connection;
+
+db.on('error', console.error.bind(console, 'connection error:'));
+
+db.once('open', function() {
+  console.log('Connection to MongoDB is open');
 });
 
-module.exports = sequelize;
+module.exports = db;

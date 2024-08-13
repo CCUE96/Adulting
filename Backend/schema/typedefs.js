@@ -1,89 +1,69 @@
-const { gql } = require('apollo-server-express');
-
-const typeDefs = gql`
-  type User {
-    id: ID!
+const typeDefs = `
+input UserInput{
+  username: String
+  email:String
+  Password:String
+}
+type User{
+     id: ID!
     username: String!
     email: String!
     password: String!
     comments: [Comment]
     replies: [Reply]
-    createdAt: String
-    updatedAt: String
-  }
-
-  type Comment {
+}
+type Finances{
+     id:ID!
+     annualIncome:String!
+     weeklyIncome:String!
+     monthlyIncome:String!
+     expenses:Map!
+     savings:String!
+     investments:Map!
+     debts:Map!
+     currency:String!
+     createdAt:Date
+     updatedAt:Date
+}
+type Fitness{
+  userId:ID!
+  diet:Map
+  groceries:Map
+  Workouts:Map
+}
+type Post{
+  title:String!
+  content:String!
+  author:String!
+  date:Date
+}
+type Comment{
     id: ID!
+    author: User!
     commentText: String!
     userId: ID!
-    user: User
+    postId: ID!
     replies: [Reply]
-    createdAt: String
-    updatedAt: String
-  }
-
-  type Reply {
+    createdAt: Date
+}
+Type Reply{
     id: ID!
-    replyText: String!
-    userId: ID!
-    commentId: ID!
-    user: User
-    comment: Comment
-    createdAt: String
-    updatedAt: String
-  }
-
-  input UserInput {
+    createdAt: Date!
+    content: String!
     username: String!
-    email: String!
-    password: String!
-  }
-
-  input UserUpdateInput {
-    username: String
-    email: String
-    password: String
-  }
-
-  input CommentInput {
-    userId: ID!
-    commentText: String!
-  }
-
-  input ReplyInput {
     userId: ID!
     commentId: ID!
-    replyText: String!
-  }
-
-  type Auth {
-    token: String!
-    user: User!
-  }
-
-  type Query {
-    users: [User]
-    user(id: ID!): User
-    comments: [Comment]
-    comment(id: ID!): Comment
-    replies: [Reply]
-    reply(id: ID!): Reply
-  }
-
-  type Mutation {
-    createUser(input: UserInput!): Auth
-    updateUser(id: ID!, input: UserUpdateInput!): User
-    deleteUser(id: ID!): User
-    login(email: String!, password: String!): Auth
-
-    createComment(input: CommentInput!): Comment
-    updateComment(id: ID!, commentText: String!): Comment
-    deleteComment(id: ID!): Comment
-
-    createReply(input: ReplyInput!): Reply
-    updateReply(id: ID!, replyText: String!): Reply
-    deleteReply(id: ID!): Reply
-  }
-`;
+}
+type Message{
+    id: ID!
+    timeSent: Date!
+    messageText: String!
+    sender: User!
+    recipient: User!
+}
+type Query{
+users:[User]
+user(id: ID!): User
+}`;
 
 module.exports = typeDefs;
