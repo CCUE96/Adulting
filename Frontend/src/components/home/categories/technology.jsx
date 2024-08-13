@@ -21,7 +21,7 @@ export default function TechBox({goBack}) {
                 <Button onClick={goBack}>Back</Button>
                 <p style={{textAlign:'center', marginTop: '0px', fontSize: 45, letterSpacing: '0.3px'}}className='dm-serif-display-regular'>TECHNOLOGY</p>
                 <List sx={{ maxHeight: '200px', overflow: 'auto', maxWidth:'700px' }}>
-                    {questions.map((question, index) => (
+                {questions.map((question, index) => (
                         <>
                         <Link to={`/forum/${question.path}`} key={index} style={{textDecoration: 'none'}}>
                             <Button sx={{color:'white', textTransform: 'none'}} style={{ display: 'block', fontSize: 24}}>
