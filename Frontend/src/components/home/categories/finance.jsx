@@ -4,6 +4,7 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import {Button} from '@mui/material'
+import { Link } from 'react-router-dom';
 
 const questions = [
     'How can I create a budget and stick to it?',
@@ -25,11 +26,13 @@ export default function FinanceBox({goBack}) {
                 <Button onClick={goBack}>Back</Button>
                 <p style={{textAlign:'center', marginTop: '0px', fontSize: 45, letterSpacing: '0.3px'}}className='dm-serif-display-regular'>FINANCE</p>
                 <List  sx={{ maxHeight: '200px', overflow: 'auto', minWidth:'700px' }}>
-                    {questions.map((question, index) => (
+                {questions.map((question, index) => (
                         <>
-                        <Button sx={{color:'white', textTransform: 'none'}} key={index} style={{ display: 'block', fontSize: 24}}>
-                            {question}
-                        </Button>
+                        <Link to={`/forum/${question.path}`} key={index} style={{textDecoration: 'none'}}>
+                            <Button sx={{color:'white', textTransform: 'none'}} style={{ display: 'block', fontSize: 24}}>
+                                {question.text}
+                            </Button>
+                        </Link>
                         <hr/>
                         </>
                     ))}

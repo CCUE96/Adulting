@@ -31,6 +31,9 @@ export default function SearchResults({ searchTerm, goBack }) {
         { text: 'How can I identify and avoid unhealthy eating habits?', path: 'nutrition/habits' },
         { text: 'What should I know about different dietary restrictions and preferences?', path: 'nutrition/diet' },
         { text: 'How can I cook healthy meals with limited kitchen equipment?', path: 'nutrition/kitchen' },
+
+
+        { text: 'How do I handle basic repairs and maintenance in my apartment?', path: 'home/repairs' },
         // ... rest of your questions
     ];
 

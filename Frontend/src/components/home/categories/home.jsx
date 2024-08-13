@@ -4,18 +4,12 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import {Button} from '@mui/material'
-    
+import { Link } from 'react-router-dom';
+
 const questions = [
-    'How can I make my home more energy efficient?',
-    'What are some basic home repairs I can do myself?',
-    'How often should I check my smoke detectors?',
-    'What is the process for refinancing a mortgage?',
-    'How can I improve home security?',
-    'What are tips for decluttering and organizing my home?',
-    'How can I create a budget for home improvements?',
-    'What are the benefits of owning a home versus renting?',
-    'How can I prepare my home for severe weather?',
-    'What are some ways to make my home more eco-friendly?'
+    { text: 'How do I handle basic repairs and maintenance in my apartment?', path: 'home/repairs' },
+   
+
 ];
 
 export default function HomeBox({goBack}) {
@@ -25,11 +19,13 @@ export default function HomeBox({goBack}) {
             <Box>
                 <Button onClick={goBack}>Back</Button>
                 <p style={{textAlign:'center', marginTop: '0px', fontSize: 48, letterSpacing: '0.4px'}}className='dm-serif-display-regular'>HOME</p>                <List  sx={{ maxHeight: '200px', overflow: 'auto' , maxWidth:'700px'}}>
-                    {questions.map((question, index) => (
+                {questions.map((question, index) => (
                         <>
-                        <Button sx={{color:'white', textTransform: 'none'}} key={index} style={{ display: 'block', fontSize: 24}}>
-                            {question}
-                        </Button>
+                        <Link to={`/forum/${question.path}`} key={index} style={{textDecoration: 'none'}}>
+                            <Button sx={{color:'white', textTransform: 'none'}} style={{ display: 'block', fontSize: 24}}>
+                                {question.text}
+                            </Button>
+                        </Link>
                         <hr/>
                         </>
                     ))}
