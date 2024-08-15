@@ -38,7 +38,13 @@ export default function SearchResults({ searchTerm, goBack }) {
         { text: 'What are the basic cooking skills every young adult should know?', path: 'home/cooking' },
         { text: 'What should I know about renters insurance and why is it important?', path: 'home/insurance' },
         { text: 'How do I deal with noisy neighbors or difficult roomates?', path: 'home/people' },
-        // ... rest of your questions
+
+        { text: "'How do I choose a health insurance plan that's right for me?", path: 'health/plan' },
+        { text: 'What are the signs of mental health issues, and where can I get help?', path: 'health/mental' },
+        { text: 'How do I find affordable healthcare services?', path: 'health/care' },
+        { text: 'What should I include in my first aid kit?', path: 'health/firstaid' },
+        { text: 'How can I maintain a healthy diet on a tight budget?', path: 'health/budgetmeals' },
+       
     ];
 
     return (

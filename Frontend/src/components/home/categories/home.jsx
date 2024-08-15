@@ -16,12 +16,6 @@ const questions = [
 
 ];
 
-//Home:
-// What should I consider when creating my first apartment budget?
-// How do I deal with noisy neighbors or difficult roommates?
-// What are the basic cooking skills every young adult should know?
-// How do I handle basic repairs and maintenance in my apartment?
-// What should I know about renters insurance and why is it important?
 
 export default function HomeBox({goBack}) {
     console.log('all categories rendered');

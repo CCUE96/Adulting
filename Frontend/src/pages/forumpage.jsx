@@ -26,6 +26,11 @@ import People from '../components/forum/home/people';
 import Cooking from '../components/forum/home/cooking';
 import Insurance from '../components/forum/home/insurance';
 import Budget from '../components/forum/home/budget';
+import Plan from '../components/forum/health/plan';
+import Mental from '../components/forum/health/mental';
+import Care from '../components/forum/health/care';
+import FirstAid from '../components/forum/health/firstaid';
+import BudgetMeals from '../components/forum/health/budgetmeals';
 
 
 export default function ForumPage() {
@@ -61,6 +66,11 @@ export default function ForumPage() {
             <Route path='home/people' element={<People/>}/>
             <Route path='home/insurance' element={<Insurance/>}/>
         
+            <Route path='health/plan' element={<Plan/>}/>
+            <Route path='health/mental' element={<Mental/>}/>
+            <Route path='health/care' element={<Care/>}/>
+            <Route path='health/firstaid' element={<FirstAid/>}/>
+            <Route path='health/budgetmeals' element={<BudgetMeals/>}/>
             {/* Add more routes as needed */}
         </Routes>
     );
