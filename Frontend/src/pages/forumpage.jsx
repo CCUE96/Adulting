@@ -22,6 +22,10 @@ import Scams from '../components/forum/technology/scams';
 import Upgrade from '../components/forum/technology/upgrade';
 import Troubleshoot from '../components/forum/technology/troubleshoot';
 import Repair from '../components/forum/home/repair';
+import People from '../components/forum/home/people';
+import Cooking from '../components/forum/home/cooking';
+import Insurance from '../components/forum/home/insurance';
+import Budget from '../components/forum/home/budget';
 
 
 export default function ForumPage() {
@@ -52,6 +56,10 @@ export default function ForumPage() {
             <Route path='nutrition/kitchen' element={<Kitchen/>}/>
 
             <Route path='home/repairs' element={<Repair/>}/>
+            <Route path='home/budget' element={<Budget/>}/>
+            <Route path='home/cooking' element={<Cooking/>}/>
+            <Route path='home/people' element={<People/>}/>
+            <Route path='home/insurance' element={<Insurance/>}/>
         
             {/* Add more routes as needed */}
         </Routes>

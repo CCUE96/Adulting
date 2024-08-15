@@ -8,9 +8,20 @@ import { Link } from 'react-router-dom';
 
 const questions = [
     { text: 'How do I handle basic repairs and maintenance in my apartment?', path: 'home/repairs' },
+    { text: 'What should I consider when creating my first apartment budget?', path: 'home/budget' },
+    { text: 'What are the basic cooking skills every young adult should know?', path: 'home/cooking' },
+    { text: 'What should I know about renters insurance and why is it important?', path: 'home/insurance' },
+    { text: 'How do I deal with noisy neighbors or difficult roomates?', path: 'home/people' },
    
 
 ];
+
+//Home:
+// What should I consider when creating my first apartment budget?
+// How do I deal with noisy neighbors or difficult roommates?
+// What are the basic cooking skills every young adult should know?
+// How do I handle basic repairs and maintenance in my apartment?
+// What should I know about renters insurance and why is it important?
 
 export default function HomeBox({goBack}) {
     console.log('all categories rendered');

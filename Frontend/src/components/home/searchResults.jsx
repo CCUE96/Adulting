@@ -34,6 +34,10 @@ export default function SearchResults({ searchTerm, goBack }) {
 
 
         { text: 'How do I handle basic repairs and maintenance in my apartment?', path: 'home/repairs' },
+        { text: 'What should I consider when creating my first apartment budget?', path: 'home/budget' },
+        { text: 'What are the basic cooking skills every young adult should know?', path: 'home/cooking' },
+        { text: 'What should I know about renters insurance and why is it important?', path: 'home/insurance' },
+        { text: 'How do I deal with noisy neighbors or difficult roomates?', path: 'home/people' },
         // ... rest of your questions
     ];
 
