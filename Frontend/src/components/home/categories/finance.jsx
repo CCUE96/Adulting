@@ -7,17 +7,16 @@ import {Button} from '@mui/material'
 import { Link } from 'react-router-dom';
 
 const questions = [
-    'How can I create a budget and stick to it?',
-    'What are the best ways to save for retirement?',
-    'How can I improve my credit score?',
-    'What is the difference between a credit and a debit card?',
-    'How do I file my taxes?',
-    'What is the best way to pay off student loans?',
-    'How can I invest in the stock market?',
-    'What is an emergency fund and why is it important?',
-    'How does insurance work and what types do I need?',
-    'Difference between fixed-rate & adjustable-rate mortgage?'
+    { text: "What are some practical tips for managing student loan debt?", path: 'finance/loans' },
+    { text: 'How do I open my first checking or savings account?', path: 'finance/banking' },
+    { text: 'What are the basics of filing taxes for the first time?', path: 'finance/taxes' },
+    { text: 'How do I build and maintain good credit as a young adult?', path: 'finance/credit' },
+    { text: 'What should I know about renting versus buying a home?', path: 'finance/homebuying' },
+   
+
 ];
+
+
 export default function FinanceBox({goBack}) {
     console.log('all categories rendered');
     return (
