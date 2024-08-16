@@ -7,15 +7,16 @@ import {Button} from '@mui/material'
 import { Link } from 'react-router-dom';
     
 const questions = [
-    'What are the recommended daily nutritional guidelines?',
-    'How much exercise should I be getting each week?',
-    'What are some effective ways to manage stress?',
-    'How often should I get a check-up from my doctor?',
-    'How can I improve my sleep quality?',
-    'What are some healthy weight loss strategies?',
-    'What are the benefits of regular physical activity?',
-    'How can I maintain good mental health?'
+    { text: "How do I choose a health insurance plan that's right for me?", path: 'health/plan' },
+    { text: 'What are the signs of mental health issues, and where can I get help?', path: 'health/mental' },
+    { text: 'How do I find affordable healthcare services?', path: 'health/care' },
+    { text: 'What should I include in my first aid kit?', path: 'health/firstaid' },
+    { text: 'How can I maintain a healthy diet on a tight budget?', path: 'health/budgetmeals' },
+   
+
 ];
+
+
 
 export default function HealthBox({goBack}) {
     console.log('all categories rendered');

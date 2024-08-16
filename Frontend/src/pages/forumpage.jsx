@@ -22,6 +22,26 @@ import Scams from '../components/forum/technology/scams';
 import Upgrade from '../components/forum/technology/upgrade';
 import Troubleshoot from '../components/forum/technology/troubleshoot';
 import Repair from '../components/forum/home/repair';
+import People from '../components/forum/home/people';
+import Cooking from '../components/forum/home/cooking';
+import Insurance from '../components/forum/home/insurance';
+import Budget from '../components/forum/home/budget';
+import Plan from '../components/forum/health/plan';
+import Mental from '../components/forum/health/mental';
+import Care from '../components/forum/health/care';
+import FirstAid from '../components/forum/health/firstaid';
+import BudgetMeals from '../components/forum/health/budgetmeals';
+import Loans from '../components/forum/finance/loans';
+import Banking from '../components/forum/finance/banking';
+import Taxes from '../components/forum/finance/taxes';
+import Credit from '../components/forum/finance/credit';
+import HomeBuying from '../components/forum/finance/homebuying';
+import Path from '../components/forum/education/path';
+import Time from '../components/forum/education/time';
+import Internship from '../components/forum/education/internship';
+import Aid from '../components/forum/education/aid';
+import Testing from '../components/forum/education/testing';
+
 
 
 export default function ForumPage() {
@@ -52,8 +72,29 @@ export default function ForumPage() {
             <Route path='nutrition/kitchen' element={<Kitchen/>}/>
 
             <Route path='home/repairs' element={<Repair/>}/>
+            <Route path='home/budget' element={<Budget/>}/>
+            <Route path='home/cooking' element={<Cooking/>}/>
+            <Route path='home/people' element={<People/>}/>
+            <Route path='home/insurance' element={<Insurance/>}/>
         
-            {/* Add more routes as needed */}
+            <Route path='health/plan' element={<Plan/>}/>
+            <Route path='health/mental' element={<Mental/>}/>
+            <Route path='health/care' element={<Care/>}/>
+            <Route path='health/firstaid' element={<FirstAid/>}/>
+            <Route path='health/budgetmeals' element={<BudgetMeals/>}/>
+
+            <Route path='finance/loans' element={<Loans/>}/>
+            <Route path='finance/banking' element={<Banking/>}/>
+            <Route path='finance/taxes' element={<Taxes/>}/>
+            <Route path='finance/credit' element={<Credit/>}/>
+            <Route path='finance/homebuying' element={<HomeBuying/>}/>
+
+            <Route path='education/path' element={<Path/>}/>
+            <Route path='education/time' element={<Time/>}/>
+            <Route path='education/internship' element={<Internship/>}/>
+            <Route path='education/aid' element={<Aid/>}/>
+            <Route path='education/testing' element={<Testing/>}/>
+           
         </Routes>
     );
 }

@@ -32,9 +32,29 @@ export default function SearchResults({ searchTerm, goBack }) {
         { text: 'What should I know about different dietary restrictions and preferences?', path: 'nutrition/diet' },
         { text: 'How can I cook healthy meals with limited kitchen equipment?', path: 'nutrition/kitchen' },
 
-
         { text: 'How do I handle basic repairs and maintenance in my apartment?', path: 'home/repairs' },
-        // ... rest of your questions
+        { text: 'What should I consider when creating my first apartment budget?', path: 'home/budget' },
+        { text: 'What are the basic cooking skills every young adult should know?', path: 'home/cooking' },
+        { text: 'What should I know about renters insurance and why is it important?', path: 'home/insurance' },
+        { text: 'How do I deal with noisy neighbors or difficult roomates?', path: 'home/people' },
+
+        { text: "'How do I choose a health insurance plan that's right for me?", path: 'health/plan' },
+        { text: 'What are the signs of mental health issues, and where can I get help?', path: 'health/mental' },
+        { text: 'How do I find affordable healthcare services?', path: 'health/care' },
+        { text: 'What should I include in my first aid kit?', path: 'health/firstaid' },
+        { text: 'How can I maintain a healthy diet on a tight budget?', path: 'health/budgetmeals' },
+
+        { text: "What are some practical tips for managing student loan debt?", path: 'finance/loans' },
+        { text: 'How do I open my first checking or savings account?', path: 'finance/banking' },
+        { text: 'What are the basics of filing taxes for the first time?', path: 'finance/taxes' },
+        { text: 'How do I build and maintain good credit as a young adult?', path: 'finance/credit' },
+        { text: 'What should I know about renting versus buying a home?', path: 'finance/homebuying' },
+
+        { text: "How do I decide between going to college or starting a career right away?", path: 'education/path' },
+        { text: 'What are the best ways to stay organized and manage my time in college?', path: 'education/time' },
+        { text: 'How can I make the most out of internships and work-study programs?', path: 'education/internship' },
+        { text: 'What should I know about student loans and financial aid repayment?', path: 'education/aid' },
+        { text: 'How can I effectively prepare for and take standardized tests?', path: 'education/testing' },
     ];
 
     return (

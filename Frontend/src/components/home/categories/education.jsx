@@ -6,18 +6,18 @@ import ListItemText from '@mui/material/ListItemText';
 import {Button} from '@mui/material'
 import { Link } from 'react-router-dom';
     
+
 const questions = [
-    'What are the requirements for getting a GED?',
-    'How can I help my child with their homework?',
-    'What are some effective study techniques?',
-    'How can I go back to school while working full-time?',
-    'What financial aid options are available for adult learners?',
-    'How can I learn a new language as an adult?',
-    'What are the benefits of online learning?',
-    'How can I stay motivated while learning something new?',
-    'What resources are available for learning new skills online?',
-    'How can I balance my studies with other responsibilities?'
-];
+    { text: "How do I decide between going to college or starting a career right away?", path: 'education/path' },
+    { text: 'What are the best ways to stay organized and manage my time in college?', path: 'education/time' },
+    { text: 'How can I make the most out of internships and work-study programs?', path: 'education/internship' },
+    { text: 'What should I know about student loans and financial aid repayment?', path: 'education/aid' },
+    { text: 'How can I effectively prepare for and take standardized tests?', path: 'education/testing' },
+   
+
+ ];
+
+
 
 export default function EducationBox({goBack}) {
     console.log('all categories rendered');
