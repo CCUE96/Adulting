@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
 import Privacy from '../components/forum/technology/privacy';
@@ -48,6 +48,11 @@ import PostSection from '../components/comments/commentpost';
 
 
 export default function ForumPage() {
+    useEffect(() => {
+        // Ensure the page does not scroll to the bottom on load
+        window.scrollTo(0, 0);
+    }, []);
+
     return (
         <>
         
