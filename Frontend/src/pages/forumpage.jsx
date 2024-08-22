@@ -42,10 +42,15 @@ import Internship from '../components/forum/education/internship';
 import Aid from '../components/forum/education/aid';
 import Testing from '../components/forum/education/testing';
 
+import CommentSection from '../components/comments/comments';
+import PostSection from '../components/comments/commentpost';
+
 
 
 export default function ForumPage() {
     return (
+        <>
+        
         <Routes>
             <Route path="technology/privacy" element={<Privacy/>} />
             <Route path="technology/passwords" element={<Password/>} />
@@ -96,5 +101,9 @@ export default function ForumPage() {
             <Route path='education/testing' element={<Testing/>}/>
            
         </Routes>
+        
+        <PostSection/>
+        <CommentSection/>
+        </>
     );
 }
