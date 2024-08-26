@@ -1,0 +1,21 @@
+{
+  "name": "adulting",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node Backend/server.js",
+    "develop": "concurrently \"cd Backend && npm run dev\" \"cd Frontend && npm run dev\"",
+    "install": "cd Backend && npm i && cd ../Frontend && npm i",
+    "seed": "cd Backend && npm run seed",
+    "build": "cd Frontend && npm run build",
+    "render-build": "npm install && npm run build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^8.2.2",
+    "nodemon": "^3.1.4"
+  }
+}

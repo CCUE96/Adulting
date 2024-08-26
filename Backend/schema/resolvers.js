@@ -1,6 +1,6 @@
-const { User, Comment, Reply } = require('../models');
-const { UserInputError } = require('apollo-server-express');
-const { signToken, checkPassword } = require('../utils/auth');
+const { User, Finances, Fitness, Post, Comment, Reply, Message } = require("../models");
+const { GraphQLError, UserInputError } = require('graphql'); 
+const { signToken, checkPassword } = require('../utils/auth'); 
 
 const resolvers = {
   Query: {
@@ -149,20 +149,8 @@ const resolvers = {
       } catch (error) {
         throw new Error("Failed to delete reply");
       }
-    },
-  },
-  User: {
-    comments: async (user) => await Comment.findAll({ where: { userId: user.id } }),
-    replies: async (user) => await Reply.findAll({ where: { userId: user.id } }),
-  },
-  Comment: {
-    user: async (comment) => await User.findByPk(comment.userId),
-    replies: async (comment) => await Reply.findAll({ where: { commentId: comment.id } }),
-  },
-  Reply: {
-    user: async (reply) => await User.findByPk(reply.userId),
-    comment: async (reply) => await Comment.findByPk(reply.commentId),
-  },
+    }
+  }
 };
 
 module.exports = resolvers;
