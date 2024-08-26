@@ -1,4 +1,7 @@
 const typeDefs = `
+scalar JSON
+scalar Date
+
 input UserInput{
   username: String
   email:String
@@ -17,19 +20,19 @@ type Finances{
      annualIncome:String!
      weeklyIncome:String!
      monthlyIncome:String!
-     expenses:Map!
+     expenses:JSON
      savings:String!
-     investments:Map!
-     debts:Map!
+     investments:JSON
+     debts:JSON
      currency:String!
      createdAt:Date
      updatedAt:Date
 }
 type Fitness{
   userId:ID!
-  diet:Map
-  groceries:Map
-  Workouts:Map
+  diet:JSON
+  groceries:JSON
+  Workouts:JSON
 }
 type Post{
   title:String!
@@ -46,7 +49,7 @@ type Comment{
     replies: [Reply]
     createdAt: Date
 }
-Type Reply{
+type Reply{
     id: ID!
     createdAt: Date!
     content: String!

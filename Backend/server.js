@@ -1,6 +1,6 @@
 require('dotenv').config();
 const express = require('express');
-const { ApolloServer } = require('apollo-server-express');
+const { ApolloServer } = require('@apollo/server');
 const path = require('path');
 const sequelize = require('./config/connection');
 const typeDefs = require('./schema/typedefs');
