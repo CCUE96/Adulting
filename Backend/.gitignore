@@ -19,3 +19,4 @@ build/
 *.njsproj
 *.sln
 coverage/
+package-lock.json
