@@ -50,7 +50,7 @@ function PostSection() {
     >
 
 <Typography variant="h4" component="h2" sx={{ marginTop: '20px', color: 'white'}}> 
- <div className='dm-serif-display-regular'>Lets see your take!</div> 
+ <div className='dm-serif-display-regular'>Got any tips?</div> 
   </Typography>
       <TextField
         id="outlined-multiline-static"
