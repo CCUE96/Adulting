@@ -42,8 +42,7 @@ import Internship from '../components/forum/education/internship';
 import Aid from '../components/forum/education/aid';
 import Testing from '../components/forum/education/testing';
 
-import CommentSection from '../components/comments/comments';
-import PostSection from '../components/comments/commentpost';
+import Comments from '../components/comments/commentpaper';
 
 
 
@@ -104,11 +103,11 @@ export default function ForumPage() {
             <Route path='education/internship' element={<Internship/>}/>
             <Route path='education/aid' element={<Aid/>}/>
             <Route path='education/testing' element={<Testing/>}/>
-           
-        </Routes>
         
-        <PostSection/>
-        <CommentSection/>
+        </Routes>
+        <div style={{justifyContent: 'center', display: 'flex'}}>
+        <Comments/>
+        </div>
         </>
     );
 }
