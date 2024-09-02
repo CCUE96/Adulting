@@ -38,8 +38,12 @@ type User {
   username: String!
   email: String!
   password: String!
+  profilePicture: String
+  bio: String
   comments: [Comment]
   replies: [Reply]
+  createdAt: Date
+  updatedAt: Date
 }
 
 type Finances {
@@ -64,10 +68,15 @@ type Fitness {
 }
 
 type Post {
+  id: ID!
   title: String!
   content: String!
-  author: String!
+  author: User!
+  images: [String]
+  tags: [String]
+  status: String
   date: Date
+  comments: [Comment]
 }
 
 type Comment {
