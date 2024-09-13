@@ -2,29 +2,34 @@ const {Schema,model} = require('mongoose')
 const bcrypt = require('bcrypt')
 const emailMatch = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-const userSchema = new Schema ({
-    username:{
+const userSchema = new Schema({
+    username: {
         type: String,
-        required:true,
-        unique:true,
-        trim:true
-        
+        required: true,
+        unique: true,
+        trim: true
     },
-    email:{
+    email: {
         type: String,
-        required:true,
-        unique:true,
-        match:[emailMatch,'Must be an email address']
-
+        required: true,
+        unique: true,
+        match: [emailMatch, 'Must be an email address']
     },
-    password:{
-        type:String,
-        required:true
-
+    password: {
+        type: String,
+        required: true
     },
-    friends:[{
-        type:Schema.Types.ObjectId,
-        ref:'User'
+    friends: [{
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+    }],
+    comments: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Comment'
+    }],
+    replies: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Reply'
     }]
 });
 

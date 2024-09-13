@@ -1,22 +1,18 @@
 require('dotenv').config();
 const mongoose = require('mongoose');
 
-const dbUri = process.env.DB_URI || 'mongodb://127.0.0.1:27017/Adulting';
+const dbUri = process.env.DB_URI;
 
-mongoose.connect(dbUri)
-  .then(() => {
-    console.log('Connected successfully to MongoDB');
-  })
-  .catch((error) => {
-    console.error('Error connecting to MongoDB:', error);
-  });
+mongoose.connect(dbUri, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
 
 const db = mongoose.connection;
 
 db.on('error', console.error.bind(console, 'connection error:'));
-
 db.once('open', function() {
-  console.log('Connection to MongoDB is open');
+  console.log('Connected successfully');
 });
 
 module.exports = db;
